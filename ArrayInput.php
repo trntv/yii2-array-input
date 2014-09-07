@@ -33,14 +33,13 @@ class ArrayInput extends InputWidget{
     public function run(){
         $content = Html::beginTag('div', ['id'=>$this->options['id']]);
         foreach($this->value as $k => $v){
-            $this->options['id'] = $this->options['id'].'_'.$k;
             $content .= Html::beginTag('div', ['class'=>'input-group']);
-            $content .= Html::input($this->options['type'], $this->name, $v, $this->inputOptions);
+            $content .= Html::input($this->inputOptions['type'], $this->name, $v, $this->inputOptions);
             $content .= Html::tag('a', Html::tag('i', '', ['class'=>'glyphicon glyphicon-remove']), ['class'=>'input-group-addon array-input-remove', 'href'=>'#']);
             $content .= Html::endTag('div');
         }
         $content .= Html::beginTag('div', ['class'=>'input-group']);
-        $content .= Html::input($this->options['type'], $this->name, null, $this->inputOptions);
+        $content .= Html::input($this->inputOptions['type'], $this->name, null, $this->inputOptions);
         $content .= Html::tag('a', Html::tag('i', '', ['class'=>'glyphicon glyphicon-plus']), ['class'=>'input-group-addon array-input-plus', 'href'=>'#']);
         $content .= Html::endTag('div');
         $content .= Html::endTag('div');
