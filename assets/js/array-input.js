@@ -2,6 +2,7 @@
     jQuery(document).ready(function(){
         jQuery(document).on('click', '.array-input-remove', function(){
             jQuery(this).parents('.input-group').remove();
+            return false;
         });
         jQuery(document).on('click', '.array-input-plus', function(){
             var inputGroup = jQuery(this).parents('.input-group');
@@ -13,6 +14,7 @@
             .find('i')
                 .removeClass('glyphicon-plus')
                 .addClass('glyphicon-remove')
+            return false;
         });
     })
 })(jQuery)
