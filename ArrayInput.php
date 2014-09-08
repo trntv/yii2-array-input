@@ -26,7 +26,7 @@ class ArrayInput extends InputWidget{
             $this->name = Html::getInputName($this->model, $this->attribute);
             $this->value = Html::getAttributeValue($this->model, $this->attribute);
         }
-        $this->name = rtrim($this->name, '[]').'[]';
+        $this->name = $this->name.'[]'; // todo: Проверка не массив ли это уже
         $this->value = is_array($this->value) ? $this->value : [$this->value];
     }
 
